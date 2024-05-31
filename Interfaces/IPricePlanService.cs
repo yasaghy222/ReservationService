@@ -6,11 +6,8 @@ namespace ReservationService.Interfaces
 {
     public interface IPricePlanService
     {
-        Task<Result> GetInfo(Guid id);
-        Task<Result> GetDetail(Guid id);
-
-        Task<Result> GetAllInfo(PricePlanFilterDto model);
-        Task<Result> GetAllDetail(PricePlanFilterDto model);
+        Task<Result> Get(Guid id);
+        Task<Result> GetAll(PricePlanFilterDto model);
 
         Task<Result> Add(AddPricePlanDto model);
         Task<Result> Edit(EditPricePlanDto model);

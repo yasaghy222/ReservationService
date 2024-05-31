@@ -22,9 +22,6 @@ public class ReservationService(ReservationServiceContext context,
 
 	public async Task<Result> Get(Guid id)
 	{
-		if (id == Guid.Empty)
-			return CustomErrors.InvalidData("Id not Assigned!");
-
 		Reservation? reservation = await _context.Reservations.SingleOrDefaultAsync(r => r.Id == id);
 		if (reservation == null)
 			return CustomErrors.NotFoundData();
